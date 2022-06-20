@@ -16,8 +16,8 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:3001/api/auth";
-			const userUrl = "http://localhost:3001/api/user";
+			const url = "https://sp-todo-mern.herokuapp.com/api/auth";
+			const userUrl = "https://sp-todo-mern.herokuapp.com/api/user";
 			const { data: res } = await axios.post(url, data);
 			const { data: res1 } = await axios.post(userUrl, data);
 			localStorage.setItem("token", res.data);
