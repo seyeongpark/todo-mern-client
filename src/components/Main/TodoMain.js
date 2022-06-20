@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import './TodoMain.css';
 
-const API_BASE = "http://localhost:3001";
+const API_BASE = "https://sp-todo-mern.herokuapp.com";
 
 function TodoMain() {
   const [todos, setTodos] = useState([]);
