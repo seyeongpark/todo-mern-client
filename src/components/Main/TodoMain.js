@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 import './TodoMain.css';
 
-const API_BASE = "https://sp-todo-mern.herokuapp.com";
+const API_BASE = "https://sp-todo-mern.herokuapp.com/api";
 
 function TodoMain() {
   const [todos, setTodos] = useState([]);
@@ -32,7 +32,7 @@ function TodoMain() {
   }
 
   const addTodo = async () => {
-    const data = await fetch(API_BASE + "/todo/new", {
+    const data = await fetch(API_BASE + "/api/todo/new", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -49,7 +49,7 @@ function TodoMain() {
   }
 
   const completeTodo = async id => {
-      const data = await fetch(API_BASE + "/todo/complete/"+id)
+      const data = await fetch(API_BASE + "/api/todo/complete/"+id)
         .then(res => res.json());
         
         setTodos(todos => todos.map(todo => {
@@ -61,7 +61,7 @@ function TodoMain() {
   }
 
   const deleteTodo = async id => {
-    const data = await fetch(API_BASE + "/todo/delete/"+id, {method: "DELETE"})
+    const data = await fetch(API_BASE + "/api/todo/delete/"+id, {method: "DELETE"})
     .then(res => res.json());
 
     setTodos(todos => todos.filter(todo => todo._id != data._id));
