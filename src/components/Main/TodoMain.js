@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import './TodoMain.css';
 
-const API_BASE = "https://sp-todo-mern.herokuapp.com/api";
+// const API_BASE = "https://sp-todo-mern.herokuapp.com";
+const API_BASE = "http://localhost:3001/api";
 
 function TodoMain() {
   const [todos, setTodos] = useState([]);
@@ -19,8 +20,6 @@ function TodoMain() {
     console.log('Logged in user INFORMATION--');
     console.log("Name: ", userName);
   }, [])
-
-  
 
   const GetTodos = async userId => {
     await fetch(API_BASE + "/todos/"+ userId)
