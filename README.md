@@ -1,5 +1,6 @@
 # TODO
 
+## 🔎 Details
 A web application that helps users stay organized by adding their tasks to ToDo lists.
 In this application, a user can create, read, and delete the ToDo lists, and change a task to the 'completed' state.
 
